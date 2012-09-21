@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+$: << File.expand_path('../lib', __FILE__)
+
+require 'game_runner'
+require 'code_builder'
+require 'io'
+
+code = CodeBuilder.new.build_code
+p "the secret is: #{code}"
+io = MastermindIO.new
+GameRunner.new(code, io).play_game
