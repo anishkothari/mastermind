@@ -12,7 +12,7 @@ class GuessComparator
       end
       i += 1
     end
-    str
+    "Use this information wisely: " + str
   end
 
 end

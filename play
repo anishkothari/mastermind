@@ -7,6 +7,7 @@ require 'code_builder'
 require 'io'
 
 code = CodeBuilder.new.build_code
-p "the secret is: #{code}"
+#p "the secret is: #{code}"
 io = MastermindIO.new
+p "Please make a guess to crack the code using 4 letters [a..f]"
 GameRunner.new(code, io).play_game

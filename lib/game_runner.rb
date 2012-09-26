@@ -9,10 +9,16 @@ class GameRunner
   def play_game
     comparor = GuessComparator.new
     guess = @io.prompt_guess()
-    while guess != @code
+    i = 1
+    while guess != @code && i != 11
       response = comparor.compare(guess, @code)
       @io.give_response(response)
-      guess = @io.prompt_guess()
+      puts "This is try # #{i+1} "
+      puts "Please make another guess. #{guess = @io.prompt_guess()} "
+      i += 1
+     end
+     if guess == @code
+       puts "You broke the code! You are a Mastermind!"
     end
   end
 
